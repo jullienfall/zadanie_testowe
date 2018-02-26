@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <title>Mieszkania</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <section class="container container-navigation">
+       <label class="navigation-drop-menu" for="drop-menu">
+           <img class="navigation-drop-menu--img" src="icons/arrow-down-white.png" alt="">
+       </label>
+        <input class="navigation-drop-menu-input" type="checkbox" id="drop-menu">
+        <ul class="container-navigation__ul">
+            <li class="container-navigation__li">
+                <a class="container-navigation__li__a" href="">Inwestycja</a>
+            </li>
+            <li class="container-navigation__li">
+                <a class="container-navigation__li__a" href="#filter">Dostępność</a>
+            </li>
+            <li class="container-navigation__li">
+                <a class="container-navigation__li__a" href="#house">Rzuty Mieszkań</a>
+            </li>
+            <li class="container-navigation__li">
+                <a class="container-navigation__li__a" href="#contact">Kontakt</a>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Slider -->
+
+    <section class="container container-slider">
+        <div class="container-slider__slides container-slider__slides1"></div>
+        <div class="container-slider__slides container-slider__slides2"></div>
+        <div class="container-slider__slides container-slider__slides3"></div>
+        <div class="container-slider__slides container-slider__slides4"></div>
+
+        <button class="btn btn-left" onclick="plusSlides(-1)">&#10092;</button>
+        <button class="btn btn-right" onclick="plusSlides(1)">&#10093;</button>
+    </section>
+
+    <!-- Filters -->
+
+    <section class="container container-filter" id="filter">
+        <div class="container-outer">
+
+            <div class="container-inner">
+
+                <div class="container-filter--col">
+                    <div class="container-filter__div">
+                        <p class="container-filter__p">kondygnacja</p>
+                        <div class="container-filter__icon">
+                            <img class="container-filter__icon--i container-filter__icon--i--down" src="icons/arrow-down.png" alt="">
+                            <img class="container-filter__icon--i
+               container-filter__icon--i--up" src="icons/arrow-up.png" alt="">
+                        </div>
+                    </div>
+                    <div class="container-filter__checkbox">
+                        <div class="container-filter__checkbox__inner">
+                            <input class="container-filter__checkbox__input" id="flor" type="checkbox">
+                            <label for="flor">piętro</label>
+                        </div>
+                        <div class="container-filter__checkbox__inner">
+                            <input class="container-filter__checkbox__input" id="parter" type="checkbox">
+                            <label for="parter">parter</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-filter--col">
+                    <div class="container-filter__div">
+                        <p class="container-filter__p">ogródek/strych</p>
+                        <div class="container-filter__icon">
+                            <img class="container-filter__icon--i container-filter__icon--i--down" src="icons/arrow-down.png" alt="">
+                            <img class="container-filter__icon--i
+               container-filter__icon--i--up" src="icons/arrow-up.png" alt="">
+                        </div>
+                    </div>
+                    <div class="container-filter__checkbox">
+                        <div class="container-filter__checkbox__inner">
+                            <input class="container-filter__checkbox__input" id="garden" type="checkbox">
+                            <label for="garden">ogródek</label>
+                        </div>
+                        <div class="container-filter__checkbox__inner">
+                            <input class="container-filter__checkbox__input" id="roof" type="checkbox">
+                            <label for="roof">strych</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-filter--col">
+                    <div class="container-filter__div">
+                        <p class="container-filter__p">status</p>
+                        <div class="container-filter__icon">
+                            <img class="container-filter__icon--i container-filter__icon--i--down" src="icons/arrow-down.png" alt="">
+                            <img class="container-filter__icon--i
+               container-filter__icon--i--up" src="icons/arrow-up.png" alt="">
+                        </div>
+                    </div>
+                    <div class="container-filter__checkbox">
+                        <div class="container-filter__checkbox__inner">
+                            <input class="container-filter__checkbox__input" id="free" type="checkbox">
+                            <label for="free">wolny</label>
+                        </div>
+                        <div class="container-filter__checkbox__inner">
+                            <input class="container-filter__checkbox__input" id="reserwation" type="checkbox">
+                            <label for="reserwation">rezerwacja</label>
+                        </div>
+                        <div class="container-filter__checkbox__inner">
+                            <input class="container-filter__checkbox__input" id="sold" type="checkbox">
+                            <label for="sold">sprzedany</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-filter--col">
+                    <div class="container-filter__div">
+                        <p class="container-filter__p">cena</p>
+                        <div class="container-filter__icon">
+                            <img class="container-filter__icon--i container-filter__icon--i--down" src="icons/arrow-down.png" alt="">
+                            <img class="container-filter__icon--i
+               container-filter__icon--i--up" src="icons/arrow-up.png" alt="">
+                        </div>
+                    </div>
+                    <div class="container-filter__checkbox">
+                        <div class="container-filter__checkbox__inner">
+                            <input class="container-filter__checkbox__input" id="biggest" type="checkbox">
+                            <label for="biggest">rosnącą</label>
+                        </div>
+                        <div class="container-filter__checkbox__inner">
+                            <input class="container-filter__checkbox__input" id="smaller" type="checkbox">
+                            <label for="smaller">malejącą</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-filter__div--filter">filtrowanie</div>
+            </div>
+
+            <!-- Filter Table -->
+
+            <table class="container-table-main">
+                <tr>
+                    <th class="table-header">
+                        <div class="container-table--div">
+                            <p>nr mieszkania <br>budynku</p>
+                            <div class="container-table__icon">
+                                <i onclick="sortTableUp(0)" class="fa fa-angle-up container-table__icon--i"></i>
+                                <i onclick="sortTableDown(0)" class="fa fa-angle-down container-table__icon--i"></i>
+                            </div>
+                        </div>
+                    </th>
+                    <th class="table-header">
+                        <div class="container-table--div">
+                            <p class="container-table--p">kondygnacja</p>
+                            <div class="container-table__icon">
+                                <i onclick="sortTableUp(1)" class="fa fa-angle-up container-table__icon--i"></i>
+                                <i onclick="sortTableDown(1)" class="fa fa-angle-down container-table__icon--i"></i>
+                            </div>
+                        </div>
+                    </th>
+                    <th class="table-header">
+                        <div class="container-table--div">
+                            <p>powierzchnia <br>użytkowa</p>
+                            <div class="container-table__icon">
+                                <i onclick="sortTableUp(2)" class="fa fa-angle-up container-table__icon--i"></i>
+                                <i onclick="sortTableDown(2)" class="fa fa-angle-down container-table__icon--i"></i>
+                            </div>
+                        </div>
+                    </th>
+                    <th class="table-header">
+                        <div class="container-table--div">
+                            <p>powierzchnia <br>ogródka/strychu</p>
+                            <div class="container-table__icon">
+                                <i onclick="sortTableUp(3)" class="fa fa-angle-up container-table__icon--i"></i>
+                                <i onclick="sortTableDown(3)" class="fa fa-angle-down container-table__icon--i"></i>
+                            </div>
+                        </div>
+                    </th>
+                    <th class="table-header">
+                        <div class="container-table--div">
+                            <p>cena <br>brutto</p>
+                            <div class="container-table__icon">
+                                <i onclick="sortTableUp(4)" class="fa fa-angle-up container-table__icon--i"></i>
+                                <i onclick="sortTableDown(4)" class="fa fa-angle-down container-table__icon--i"></i>
+                            </div>
+                        </div>
+                    </th>
+                    <th class="table-header">
+                        <div class="container-table--div">
+                            <p class="container-table--p">plan</p>
+                        </div>
+                    </th>
+                    <th class="table-header">
+                        <div class="container-table--div">
+                            <p class="container-table--p">status</p>
+                            <div class="container-table__icon">
+                                <i onclick="sortTableUp(6)" class="fa fa-angle-up container-table__icon--i"></i>
+                                <i onclick="sortTableDown(6)" class="fa fa-angle-down container-table__icon--i"></i>
+                            </div>
+                        </div>
+                    </th>
+                </tr>
+                <tr class="container-table container-table1">
+                    <td>P11A</td>
+                    <td>parter</td>
+                    <td>64,32m<sup>2</sup></td>
+                    <td>ogródek 81 m<sup>2</sup></td>
+                    <td>289 500 zł</td>
+                    <td><a class="container-table--link" href="">pobierz</a></td>
+                    <td>wolny</td>
+                </tr>
+                <tr class="container-table container-table1">
+                    <td>P11B</td>
+                    <td>piętro</td>
+                    <td>66,57m<sup>2</sup></td>
+                    <td>strych 15 m<sup>2</sup></td>
+                    <td>259 500 zł</td>
+                    <td><a class="container-table--link" href="">pobierz</a></td>
+                    <td>rezerwacja</td>
+                </tr>
+                <tr class="container-table container-table1">
+                    <td>P12A</td>
+                    <td>parter</td>
+                    <td>64,32m<sup>2</sup></td>
+                    <td>ogródek 84 m<sup>2</sup></td>
+                    <td>289 500 zł</td>
+                    <td><a class="container-table--link" href="">pobierz</a></td>
+                    <td>wolny</td>
+                </tr>
+                <tr class="container-table container-table1">
+                    <td>P12B</td>
+                    <td>piętro</td>
+                    <td>66,57m<sup>2</sup></td>
+                    <td>strych 15 m<sup>2</sup></td>
+                    <td>259 500 zł</td>
+                    <td><a class="container-table--link" href="">pobierz</a></td>
+                    <td>wolny</td>
+                </tr>
+                <tr class="container-table container-table1">
+                    <td>P13A</td>
+                    <td>parter</td>
+                    <td>64,32m<sup>2</sup></td>
+                    <td>ogródek 82 m<sup>2</sup></td>
+                    <td>289 500 zł</td>
+                    <td><a class="container-table--link" href="">pobierz</a></td>
+                    <td>wolny</td>
+                </tr>
+                <tr class="container-table container-table1">
+                    <td>P13B</td>
+                    <td>piętro</td>
+                    <td>66,57m<sup>2</sup></td>
+                    <td>strych 15 m<sup>2</sup></td>
+                    <td>259 500 zł</td>
+                    <td><a class="container-table--link" href="">pobierz</a></td>
+                    <td>wolny</td>
+                </tr>
+                <tr class="container-table container-table1">
+                    <td>P14A</td>
+                    <td>parter</td>
+                    <td>64,32m<sup>2</sup></td>
+                    <td>ogródek 87 m<sup>2</sup></td>
+                    <td>289 500 zł</td>
+                    <td><a class="container-table--link" href="">pobierz</a></td>
+                    <td>wolny</td>
+                </tr>
+                <tr class="container-table container-table1">
+                    <td>P14B</td>
+                    <td>piętro</td>
+                    <td>66,57m<sup>2</sup></td>
+                    <td>strych 15 m<sup>2</sup></td>
+                    <td>259 500 zł</td>
+                    <td><a class="container-table--link" href="">pobierz</a></td>
+                    <td>sprzedany</td>
+                </tr>
+
+                <tr class="container-table container-table1">
+                    <td>P15A</td>
+                    <td>parter</td>
+                    <td>64,32m<sup>2</sup></td>
+                    <td>ogródek 81 m<sup>2</sup></td>
+                    <td>289 500 zł</td>
+                    <td><a class="container-table--link" href="">pobierz</a></td>
+                    <td>wolny</td>
+                </tr>
+                <tr class="container-table container-table1">
+                    <td>P15B</td>
+                    <td>piętro</td>
+                    <td>66,57m<sup>2</sup></td>
+                    <td>strych 15 m<sup>2</sup></td>
+                    <td>259 500 zł</td>
+                    <td><a class="container-table--link" href="">pobierz</a></td>
+                    <td>rezerwacja</td>
+                </tr>
+                <tr class="container-table container-table2">
+                    <td>P16A</td>
+                    <td>parter</td>
+                    <td>64,32m<sup>2</sup></td>
+                    <td>ogródek 84 m<sup>2</sup></td>
+                    <td>289 500 zł</td>
+                    <td><a class="container-table--link" href="">pobierz</a></td>
+                    <td>wolny</td>
+                </tr>
+                <tr class="container-table container-table2">
+                    <td>P16B</td>
+                    <td>piętro</td>
+                    <td>66,57m<sup>2</sup></td>
+                    <td>strych 15 m<sup>2</sup></td>
+                    <td>259 500 zł</td>
+                    <td><a class="container-table--link" href="">pobierz</a></td>
+                    <td>wolny</td>
+                </tr>
+                <tr class="container-table container-table2">
+                    <td>P17A</td>
+                    <td>parter</td>
+                    <td>64,32m<sup>2</sup></td>
+                    <td>ogródek 82 m<sup>2</sup></td>
+                    <td>289 500 zł</td>
+                    <td><a class="container-table--link" href="">pobierz</a></td>
+                    <td>wolny</td>
+                </tr>
+                <tr class="container-table container-table2">
+                    <td>P17B</td>
+                    <td>piętro</td>
+                    <td>66,57m<sup>2</sup></td>
+                    <td>strych 15 m<sup>2</sup></td>
+                    <td>259 500 zł</td>
+                    <td><a class="container-table--link" href="">pobierz</a></td>
+                    <td>wolny</td>
+                </tr>
+                <tr class="container-table container-table2">
+                    <td>P18A</td>
+                    <td>parter</td>
+                    <td>64,32m<sup>2</sup></td>
+                    <td>ogródek 87 m<sup>2</sup></td>
+                    <td>289 500 zł</td>
+                    <td><a class="container-table--link" href="">pobierz</a></td>
+                    <td>wolny</td>
+                </tr>
+                <tr class="container-table container-table2">
+                    <td>P18B</td>
+                    <td>piętro</td>
+                    <td>66,57m<sup>2</sup></td>
+                    <td>strych 15 m<sup>2</sup></td>
+                    <td>259 500 zł</td>
+                    <td><a class="container-table--link" href="">pobierz</a></td>
+                    <td>sprzedany</td>
+                </tr>
+
+                <tr class="container-table container-table2">
+                    <td>P19A</td>
+                    <td>parter</td>
+                    <td>64,32m<sup>2</sup></td>
+                    <td>ogródek 81 m<sup>2</sup></td>
+                    <td>289 500 zł</td>
+                    <td><a class="container-table--link" href="">pobierz</a></td>
+                    <td>wolny</td>
+                </tr>
+                <tr class="container-table container-table2">
+                    <td>P19B</td>
+                    <td>piętro</td>
+                    <td>66,57m<sup>2</sup></td>
+                    <td>strych 15 m<sup>2</sup></td>
+                    <td>259 500 zł</td>
+                    <td><a class="container-table--link" href="">pobierz</a></td>
+                    <td>rezerwacja</td>
+                </tr>
+                <tr class="container-table container-table2">
+                    <td>P20A</td>
+                    <td>parter</td>
+                    <td>64,32m<sup>2</sup></td>
+                    <td>ogródek 84 m<sup>2</sup></td>
+                    <td>289 500 zł</td>
+                    <td><a class="container-table--link" href="">pobierz</a></td>
+                    <td>wolny</td>
+                </tr>
+                <tr class="container-table container-table2">
+                    <td>P20B</td>
+                    <td>piętro</td>
+                    <td>66,57m<sup>2</sup></td>
+                    <td>strych 15 m<sup>2</sup></td>
+                    <td>259 500 zł</td>
+                    <td><a class="container-table--link" href="">pobierz</a></td>
+                    <td>wolny</td>
+                </tr>
+                <tr class="container-table container-table3">
+                    <td>P21A</td>
+                    <td>parter</td>
+                    <td>64,32m<sup>2</sup></td>
+                    <td>ogródek 82 m<sup>2</sup></td>
+                    <td>289 500 zł</td>
+                    <td><a class="container-table--link" href="">pobierz</a></td>
+                    <td>wolny</td>
+                </tr>
+                <tr class="container-table container-table3">
+                    <td>P21B</td>
+                    <td>piętro</td>
+                    <td>66,57m<sup>2</sup></td>
+                    <td>strych 15 m<sup>2</sup></td>
+                    <td>259 500 zł</td>
+                    <td><a class="container-table--link" href="">pobierz</a></td>
+                    <td>wolny</td>
+                </tr>
+                <tr class="container-table container-table3">
+                    <td>P22A</td>
+                    <td>parter</td>
+                    <td>64,32m<sup>2</sup></td>
+                    <td>ogródek 87 m<sup>2</sup></td>
+                    <td>289 500 zł</td>
+                    <td><a class="container-table--link" href="">pobierz</a></td>
+                    <td>wolny</td>
+                </tr>
+                <tr class="container-table container-table3">
+                    <td>P22B</td>
+                    <td>piętro</td>
+                    <td>66,57m<sup>2</sup></td>
+                    <td>strych 15 m<sup>2</sup></td>
+                    <td>259 500 zł</td>
+                    <td><a class="container-table--link" href="">pobierz</a></td>
+                    <td>sprzedany</td>
+                </tr>
+
+                <tr class="container-table container-table3">
+                    <td>P23A</td>
+                    <td>parter</td>
+                    <td>64,32m<sup>2</sup></td>
+                    <td>ogródek 81 m<sup>2</sup></td>
+                    <td>289 500 zł</td>
+                    <td><a class="container-table--link" href="">pobierz</a></td>
+                    <td>wolny</td>
+                </tr>
+                <tr class="container-table container-table3">
+                    <td>P23B</td>
+                    <td>piętro</td>
+                    <td>66,57m<sup>2</sup></td>
+                    <td>strych 15 m<sup>2</sup></td>
+                    <td>259 500 zł</td>
+                    <td><a class="container-table--link" href="">pobierz</a></td>
+                    <td>rezerwacja</td>
+                </tr>
+                <tr class="container-table container-table3">
+                    <td>P24A</td>
+                    <td>parter</td>
+                    <td>64,32m<sup>2</sup></td>
+                    <td>ogródek 84 m<sup>2</sup></td>
+                    <td>289 500 zł</td>
+                    <td><a class="container-table--link" href="">pobierz</a></td>
+                    <td>wolny</td>
+                </tr>
+                <tr class="container-table container-table3">
+                    <td>P24B</td>
+                    <td>piętro</td>
+                    <td>66,57m<sup>2</sup></td>
+                    <td>strych 15 m<sup>2</sup></td>
+                    <td>259 500 zł</td>
+                    <td><a class="container-table--link" href="">pobierz</a></td>
+                    <td>wolny</td>
+                </tr>
+                <tr class="container-table container-table3">
+                    <td>P25A</td>
+                    <td>parter</td>
+                    <td>64,32m<sup>2</sup></td>
+                    <td>ogródek 82 m<sup>2</sup></td>
+                    <td>289 500 zł</td>
+                    <td><a class="container-table--link" href="">pobierz</a></td>
+                    <td>wolny</td>
+                </tr>
+                <tr class="container-table container-table3">
+                    <td>P25B</td>
+                    <td>piętro</td>
+                    <td>66,57m<sup>2</sup></td>
+                    <td>strych 15 m<sup>2</sup></td>
+                    <td>259 500 zł</td>
+                    <td><a class="container-table--link" href="">pobierz</a></td>
+                    <td>wolny</td>
+                </tr>
+                <tr class="container-table container-table4">
+                    <td>P26A</td>
+                    <td>parter</td>
+                    <td>64,32m<sup>2</sup></td>
+                    <td>ogródek 87 m<sup>2</sup></td>
+                    <td>289 500 zł</td>
+                    <td><a class="container-table--link" href="">pobierz</a></td>
+                    <td>wolny</td>
+                </tr>
+                <tr class="container-table container-table4">
+                    <td>P26B</td>
+                    <td>piętro</td>
+                    <td>66,57m<sup>2</sup></td>
+                    <td>strych 15 m<sup>2</sup></td>
+                    <td>259 500 zł</td>
+                    <td><a class="container-table--link" href="">pobierz</a></td>
+                    <td>sprzedany</td>
+                </tr>
+                <tr class="container-table container-table4">
+                    <td>P27A</td>
+                    <td>parter</td>
+                    <td>64,32m<sup>2</sup></td>
+                    <td>ogródek 82 m<sup>2</sup></td>
+                    <td>289 500 zł</td>
+                    <td><a class="container-table--link" href="">pobierz</a></td>
+                    <td>wolny</td>
+                </tr>
+                <tr class="container-table container-table4">
+                    <td>P27B</td>
+                    <td>piętro</td>
+                    <td>66,57m<sup>2</sup></td>
+                    <td>strych 15 m<sup>2</sup></td>
+                    <td>259 500 zł</td>
+                    <td><a class="container-table--link" href="">pobierz</a></td>
+                    <td>wolny</td>
+                </tr>
+                <tr class="container-table container-table4">
+                    <td>P28A</td>
+                    <td>parter</td>
+                    <td>64,32m<sup>2</sup></td>
+                    <td>ogródek 87 m<sup>2</sup></td>
+                    <td>289 500 zł</td>
+                    <td><a class="container-table--link" href="">pobierz</a></td>
+                    <td>wolny</td>
+                </tr>
+                <tr class="container-table container-table4">
+                    <td>P28B</td>
+                    <td>piętro</td>
+                    <td>66,57m<sup>2</sup></td>
+                    <td>strych 15 m<sup>2</sup></td>
+                    <td>259 500 zł</td>
+                    <td><a class="container-table--link" href="">pobierz</a></td>
+                    <td>sprzedany</td>
+                </tr>
+            </table>
+
+            <!-- Pagination -->
+
+            <div class="pagination">
+                <a onclick="openPage(tableOne)" class="pagination--a pagination--a--active">1</a>
+                <a onclick="openPage(tableTwo)" class="pagination--a">2</a>
+                <a onclick="openPage(tableTree)" class="pagination--a">3</a>
+                <a onclick="openPage(tableFour)" class="pagination--a">4</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Houses -->
+
+    <section class="container container-house" id="house">
+        <div class="container-outer">
+            <div class="container-inner container-inner-house">
+                <div class="container-house--col container-house--col--img">
+                   <div class="container-house--img--zoom">
+                    <img class="container-house--img container-house--img--left-parter" src="img/left-parter.png" alt="">
+                    <img class="container-house--img container-house--img--right-parter" src="img/right-parter.png" alt="">
+                    <img class="container-house--img container-house--img--left-floor" src="img/left-floor.png" alt="">
+                    <img class="container-house--img container-house--img--right-floor" src="img/right-floor.png" alt="">
+                    </div>
+                    <div class="container-house--zoom--button">
+                       <button class="container-house--zoom--btn container-house--zoom--btn--plus">+</button>
+                       <button class="container-house--zoom--btn container-house--zoom--btn--minus">-</button>
+                    </div>
+                </div>
+                <div class="container-house--col container-house--col--btn">
+                    <div class="container-house-btn">
+                        <button onclick="showFlat(leftParter, leftParterImg)" class="container-house-button container-house-button-active">Parter Lewy</button>
+                        <button onclick="showFlat(rightParter, rightParterImg)" class="container-house-button">Parter Prawy</button>
+                        <button onclick="showFlat(leftFlour, leftFloorImg)" class="container-house-button">Piętro Lewe</button>
+                        <button onclick="showFlat(rightFlour, rightFloorImg)" class="container-house-button">Piętro Prawe</button>
+                    </div>
+                    </div>
+                <div class="container-house--col container-house--col--table">
+                    <table class="container-house-table">
+                            <tr>
+                                <td class="container-house-table--td--name container-house-table--td--name1">powierzchnia użytkowa</td>
+                                <td class="container-house-table--td container-house-table--td--left-parter">64,32 m<sup>2</sup></td>
+                                <td class="container-house-table--td container-house-table--td--right-parter">65,72 m<sup>2</sup></td>
+                                <td class="container-house-table--td container-house-table--td--left-flour">60,35 m<sup>2</sup></td>
+                                <td class="container-house-table--td container-house-table--td--right-flour">62,82 m<sup>2</sup></td>
+                            </tr>
+                            <tr>
+                                <td class="container-house-table--td--name "><span class="container-house-table--span">1</span>salon z aneksem kuchennym</td>
+                                <td class="container-house-table--td container-house-table--td--left-parter">25,5 m<sup>2</sup></td>
+                                <td class="container-house-table--td container-house-table--td--right-parter">25,72 m<sup>2</sup></td>
+                                <td class="container-house-table--td container-house-table--td--left-flour">23,35 m<sup>2</sup></td>
+                                <td class="container-house-table--td container-house-table--td--right-flour">26,82 m<sup>2</sup></td>
+                            </tr>
+                            <tr>
+                                <td class="container-house-table--td--name"><span class="container-house-table--span">2</span>łazienka</td>
+                                <td class="container-house-table--td container-house-table--td--left-parter">6,23 m<sup>2</sup></td>
+                                <td class="container-house-table--td container-house-table--td--right-parter">5,72 m<sup>2</sup></td>
+                                <td class="container-house-table--td container-house-table--td--left-flour">6,35 m<sup>2</sup></td>
+                                <td class="container-house-table--td container-house-table--td--right-flour">7,82 m<sup>2</sup></td>
+                            </tr>
+                            <tr>
+                                <td class="container-house-table--td--name"><span class="container-house-table--span">3</span>pokój</td>
+                                <td class="container-house-table--td container-house-table--td--left-parter">12,05 m<sup>2</sup></td>
+                                <td class="container-house-table--td container-house-table--td--right-parter">15,7 m<sup>2</sup></td>
+                                <td class="container-house-table--td container-house-table--td--left-flour">14,75 m<sup>2</sup></td>
+                                <td class="container-house-table--td container-house-table--td--right-flour">11,2 m<sup>2</sup></td>
+                            </tr>
+                            <tr>
+                                <td class="container-house-table--td--name"><span class="container-house-table--span">4</span>pokój</td>
+                                <td class="container-house-table--td container-house-table--td--left-parter">9,53 m<sup>2</sup></td>
+                                <td class="container-house-table--td container-house-table--td--right-parter">11,72 m<sup>2</sup></td>
+                                <td class="container-house-table--td container-house-table--td--left-flour">8,35 m<sup>2</sup></td>
+                                <td class="container-house-table--td container-house-table--td--right-flour">9,82 m<sup>2</sup></td>
+                            </tr>
+                            <tr>
+                                <td class="container-house-table--td--name"><span class="container-house-table--span">5</span>garderoba</td>
+                                <td class="container-house-table--td container-house-table--td--left-parter">1,62 m<sup>2</sup></td>
+                                <td class="container-house-table--td container-house-table--td--right-parter">1,72 m<sup>2</sup></td>
+                                <td class="container-house-table--td container-house-table--td--left-flour">2,35 m<sup>2</sup></td>
+                                <td class="container-house-table--td container-house-table--td--right-flour">1,82 m<sup>2</sup></td>
+                            </tr>
+                            <tr>
+                                <td class="container-house-table--td--name"><span class="container-house-table--span">6</span>hol</td>
+                                <td class="container-house-table--td container-house-table--td--left-parter">5,5 m<sup>2</sup></td>
+                                <td class="container-house-table--td container-house-table--td--right-parter">6,72 m<sup>2</sup></td>
+                                <td class="container-house-table--td container-house-table--td--left-flour">5,35 m<sup>2</sup></td>
+                                <td class="container-house-table--td container-house-table--td--right-flour">4,82 m<sup>2</sup></td>
+                            </tr>
+                            <tr>
+                                <td class="container-house-table--td--name"><span class="container-house-table--span">7</span>przedpokój</td>
+                                <td class="container-house-table--td container-house-table--td--left-parter">3,79 m<sup>2</sup></td>
+                                <td class="container-house-table--td container-house-table--td--right-parter">3,72 m<sup>2</sup></td>
+                                <td class="container-house-table--td container-house-table--td--left-flour">4,35 m<sup>2</sup></td>
+                                <td class="container-house-table--td container-house-table--td--right-flour">3,82 m<sup>2</sup></td>
+                            </tr>
+                        </table>                               
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+
+    <section class="container container-contact" id="contact">
+        <div class="container-outer">
+            <div class="container-inner">
+                <div class="container-contact--col">
+                    <div class="container-contact--col--header">
+                        <img class="container-contact--col--img" src="icons/letter.png" alt="">
+                        <h1 class="container-contact--col--h1">Kontakt</h1>
+                    </div>
+                    <img src="img/logo.png" alt="Logo">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi possimus nemo architecto nostrum. Est repellendus tenetur ducimus, debitis sunt temporibus consequatur, error, quos laudantium nobis ipsam totam ipsum neque minus!</p>
+                </div>
+                <div class="container-contact--col container-contact--col--info">
+                    <div class="container-contact--col-txt">
+                        <p class="container-contact--col-txt--p">Lorem Ipsum Sp.z.o.o.</p>
+                        <p class="container-contact--col-txt--p">30-520, Krakow, Floriańska 1/1</p>
+                    </div>
+                    <div class="container-contact--col-txt">
+                        <p class="container-contact--col-txt--p">+48 777 777 777</p>
+                        <p class="container-contact--col-txt--p">kontakt@kontakt.com.pl</p>
+                    </div>
+                    <div class="container-contact--col-txt">
+                        <p class="container-contact--col-txt--p">KRS: 7000000000000</p>
+                        <p class="container-contact--col-txt--p">NIP: 777-777-77-77</p>
+                        <p class="container-contact--col-txt--p">REGON: 77777777777</p>
+                    </div>
+                </div>
+
+                <!-- Form -->
+
+                <div class="container-contact--col">
+                   <button class="container-contact--drop-btn container-contact--drop-btn--form">Formularz <img src="icons/arrow-down-white.png" alt=""></button>
+                    <form class="container-contact-form" action="" method="post">
+                        <input class="container-contact--col--input" type="text" placeholder="Imię i nazwisko" required>
+                        <input class="container-contact--col--input" type="email" placeholder="e-mail" required>
+                        <textarea class="container-contact--col--textarea" name="" id="" placeholder="treść wiadomości"></textarea>
+                        <input class="container-contact--col--input container-contact--col--input--code" type="text" value="AXK65GH">
+                        <input class="container-contact--col--input container-contact--col--input--code" type="text" placeholder="przepisz" required>
+                        <button class="container-contact--col--button--submit" submit="">Wysłanie formularza</button>
+                    </form>
+                    <button class="container-contact--drop-btn container-contact--drop-btn--less">Mniej <img src="icons/arrow-up-white.png" alt=""></button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
