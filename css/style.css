@@ -127,6 +127,9 @@ body {
     width: 230px;
     height: 28px;
     padding: 5px;
+    cursor: pointer;
+    outline: none;
+    border: none;
 }
 
 .container-filter__p {
@@ -192,11 +195,17 @@ body {
 
 .container-table--div {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
-
+.container-table {
+    transition: 0.5s;
+}
+.container-table:hover {
+    background-color: rgba(0, 166, 113, 0.3);
+}
 .container-table--p {
-    padding: 9px 0;
+    padding: 8px 0;
 }
 
 .container-table__icon {
@@ -214,12 +223,6 @@ body {
     color: #00a671;
 }
 
-.container-table2,
-.container-table3,
-.container-table4 {
-    display: none;
-}
-
 .container-table--link {
     text-decoration: none;
     color: #000;
@@ -229,10 +232,20 @@ body {
 .container-table--link:hover {
     color: #00a671;
 }
+.table-header-arrows {
+    display: none;
+}
+.container-table-drop-arrow {
+    background: #00a671;
+    padding: 5px;
+}
 
 /* Pagination */
 
-.pagination--a {
+.pagination1,
+.pagination2,
+.pagination3,
+.pagination4 {
     display: inline-block;
     text-decoration: none;
     padding: 7px 14px;
@@ -240,9 +253,12 @@ body {
     background-color: #e5e5e5;
     cursor: pointer;
     transition: 0.4s;
+    border: none;
+    color: #929499;
+    outline: none;
 }
 
-.pagination--a--active {
+.pagination-active {
     background-color: #00a671;
     color: #fff;
 }
@@ -286,7 +302,7 @@ body {
     bottom: 10px;
     right: 10px;
     z-index: 100;
-    /*display: none;*/
+    display: none;
 }
 .container-house--zoom--btn {
     width: 30px;

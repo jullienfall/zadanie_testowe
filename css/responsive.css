@@ -1,4 +1,4 @@
-@media (max-width: 450px) {
+@media (max-width: 320px) {
     .navigation-drop-menu {
         display: block;
         text-align: right;
@@ -68,7 +68,21 @@
     .container-contact-form {
         display: none;
     }
-    .container-house--zoom {
+    .container-house--zoom--button {
         display: block;
+    }
+    .container-table-main {
+        font-size: 0.8em;
+        margin: 10px 0;
+    }
+    .table-header {
+        padding: 9px;
+    }
+    .table-header-arrows {
+        display: table-cell;
+    }
+    .container-table--col2 {
+        display: none;
+        width: 70px;
     }
 }

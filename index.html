@@ -57,15 +57,15 @@
                     <div class="container-filter__div">
                         <p class="container-filter__p">kondygnacja</p>
                         <div class="container-filter__icon">
-                            <img class="container-filter__icon--i container-filter__icon--i--down" src="icons/arrow-down.png" alt="">
-                            <img class="container-filter__icon--i
+                            <img onclick="filtersOpen(parterBox)" class="container-filter__icon--i container-filter__icon--i--down" src="icons/arrow-down.png" alt="">
+                            <img onclick="filtersClose(parterBox)" class="container-filter__icon--i
                container-filter__icon--i--up" src="icons/arrow-up.png" alt="">
                         </div>
                     </div>
-                    <div class="container-filter__checkbox">
+                    <div class="container-filter__checkbox container-filter__checkbox--parter">
                         <div class="container-filter__checkbox__inner">
-                            <input class="container-filter__checkbox__input" id="flor" type="checkbox">
-                            <label for="flor">piętro</label>
+                            <input class="container-filter__checkbox__input" id="floor" type="checkbox">
+                            <label for="floor">piętro</label>
                         </div>
                         <div class="container-filter__checkbox__inner">
                             <input class="container-filter__checkbox__input" id="parter" type="checkbox">
@@ -78,12 +78,12 @@
                     <div class="container-filter__div">
                         <p class="container-filter__p">ogródek/strych</p>
                         <div class="container-filter__icon">
-                            <img class="container-filter__icon--i container-filter__icon--i--down" src="icons/arrow-down.png" alt="">
-                            <img class="container-filter__icon--i
+                            <img onclick="filtersOpen(gardenBox)" class="container-filter__icon--i container-filter__icon--i--down" src="icons/arrow-down.png" alt="">
+                            <img onclick="filtersClose(gardenBox)" class="container-filter__icon--i
                container-filter__icon--i--up" src="icons/arrow-up.png" alt="">
                         </div>
                     </div>
-                    <div class="container-filter__checkbox">
+                    <div class="container-filter__checkbox container-filter__checkbox--garden">
                         <div class="container-filter__checkbox__inner">
                             <input class="container-filter__checkbox__input" id="garden" type="checkbox">
                             <label for="garden">ogródek</label>
@@ -99,19 +99,19 @@
                     <div class="container-filter__div">
                         <p class="container-filter__p">status</p>
                         <div class="container-filter__icon">
-                            <img class="container-filter__icon--i container-filter__icon--i--down" src="icons/arrow-down.png" alt="">
-                            <img class="container-filter__icon--i
+                            <img onclick="filtersOpen(statusBox)" class="container-filter__icon--i container-filter__icon--i--down" src="icons/arrow-down.png" alt="">
+                            <img onclick="filtersClose(statusBox)" class="container-filter__icon--i
                container-filter__icon--i--up" src="icons/arrow-up.png" alt="">
                         </div>
                     </div>
-                    <div class="container-filter__checkbox">
-                        <div class="container-filter__checkbox__inner">
-                            <input class="container-filter__checkbox__input" id="free" type="checkbox">
-                            <label for="free">wolny</label>
+                    <div class="container-filter__checkbox container-filter__checkbox--status">
+                        <div class="container-filter__checkbox__inner ">
+                            <input class="container-filter__checkbox__input" id="available" type="checkbox">
+                            <label for="available">wolny</label>
                         </div>
                         <div class="container-filter__checkbox__inner">
-                            <input class="container-filter__checkbox__input" id="reserwation" type="checkbox">
-                            <label for="reserwation">rezerwacja</label>
+                            <input class="container-filter__checkbox__input" id="reserved" type="checkbox">
+                            <label for="reserved">rezerwacja</label>
                         </div>
                         <div class="container-filter__checkbox__inner">
                             <input class="container-filter__checkbox__input" id="sold" type="checkbox">
@@ -124,40 +124,40 @@
                     <div class="container-filter__div">
                         <p class="container-filter__p">cena</p>
                         <div class="container-filter__icon">
-                            <img class="container-filter__icon--i container-filter__icon--i--down" src="icons/arrow-down.png" alt="">
-                            <img class="container-filter__icon--i
+                            <img onclick="filtersOpen(priceBox)" class="container-filter__icon--i container-filter__icon--i--down" src="icons/arrow-down.png" alt="">
+                            <img onclick="filtersClose(priceBox)" class="container-filter__icon--i
                container-filter__icon--i--up" src="icons/arrow-up.png" alt="">
                         </div>
                     </div>
-                    <div class="container-filter__checkbox">
+                    <div class="container-filter__checkbox container-filter__checkbox--price">
                         <div class="container-filter__checkbox__inner">
-                            <input class="container-filter__checkbox__input" id="biggest" type="checkbox">
-                            <label for="biggest">rosnącą</label>
+                            <input class="container-filter__checkbox__input" id="less" type="checkbox">
+                            <label for="less">mniej 250 zł</label>
                         </div>
                         <div class="container-filter__checkbox__inner">
-                            <input class="container-filter__checkbox__input" id="smaller" type="checkbox">
-                            <label for="smaller">malejącą</label>
+                            <input class="container-filter__checkbox__input" id="more" type="checkbox">
+                            <label for="more">więcej 250 zł</label>
                         </div>
                     </div>
                 </div>
 
-                <div class="container-filter__div--filter">filtrowanie</div>
+                <button class="container-filter__div--filter">filtrowanie</button>
             </div>
 
             <!-- Filter Table -->
 
             <table class="container-table-main">
                 <tr>
-                    <th class="table-header">
+                    <th class="table-header container-table--col1">
                         <div class="container-table--div">
-                            <p>nr mieszkania <br>budynku</p>
+                            <p>nr.budynku<br> mieszkania</p>
                             <div class="container-table__icon">
                                 <i onclick="sortTableUp(0)" class="fa fa-angle-up container-table__icon--i"></i>
                                 <i onclick="sortTableDown(0)" class="fa fa-angle-down container-table__icon--i"></i>
                             </div>
                         </div>
                     </th>
-                    <th class="table-header">
+                    <th class="table-header container-table--col1">
                         <div class="container-table--div">
                             <p class="container-table--p">kondygnacja</p>
                             <div class="container-table__icon">
@@ -166,7 +166,7 @@
                             </div>
                         </div>
                     </th>
-                    <th class="table-header">
+                    <th class="table-header container-table--col1">
                         <div class="container-table--div">
                             <p>powierzchnia <br>użytkowa</p>
                             <div class="container-table__icon">
@@ -175,7 +175,7 @@
                             </div>
                         </div>
                     </th>
-                    <th class="table-header">
+                    <th class="table-header container-table--col2">
                         <div class="container-table--div">
                             <p>powierzchnia <br>ogródka/strychu</p>
                             <div class="container-table__icon">
@@ -184,7 +184,7 @@
                             </div>
                         </div>
                     </th>
-                    <th class="table-header">
+                    <th class="table-header container-table--col2">
                         <div class="container-table--div">
                             <p>cena <br>brutto</p>
                             <div class="container-table__icon">
@@ -193,12 +193,12 @@
                             </div>
                         </div>
                     </th>
-                    <th class="table-header">
+                    <th class="table-header container-table--col2">
                         <div class="container-table--div">
                             <p class="container-table--p">plan</p>
                         </div>
                     </th>
-                    <th class="table-header">
+                    <th class="table-header container-table--col2">
                         <div class="container-table--div">
                             <p class="container-table--p">status</p>
                             <div class="container-table__icon">
@@ -207,345 +207,341 @@
                             </div>
                         </div>
                     </th>
+                    <th class="table-header table-header-arrows">
+               
+                    <img onclick="openTable2()" class="container-table-drop-arrow" src="icons/arrow-right-white.png" alt="">
+                    <img onclick="openTable1()" class="container-table-drop-arrow" src="icons/arrow-left-white.png" alt="">
+                        
+                </th>
                 </tr>
-                <tr class="container-table container-table1">
-                    <td>P11A</td>
-                    <td>parter</td>
-                    <td>64,32m<sup>2</sup></td>
-                    <td>ogródek 81 m<sup>2</sup></td>
-                    <td>289 500 zł</td>
-                    <td><a class="container-table--link" href="">pobierz</a></td>
-                    <td>wolny</td>
+                <tr class="container-table">
+                    <td class="container-table--col1">P11A</td>
+                    <td class="parter container-table--col1">parter</td>
+                    <td class="container-table--col1">64,32m<sup>2</sup></td>
+                    <td class="garden container-table--col2">ogródek 81 m<sup>2</sup></td>
+                    <td class="more container-table--col2">289 500 zł</td>
+                    <td class="container-table--col2"><a class="container-table--link" href="">pobierz</a></td>
+                    <td class="available container-table--col2">wolny</td>
                 </tr>
-                <tr class="container-table container-table1">
-                    <td>P11B</td>
-                    <td>piętro</td>
-                    <td>66,57m<sup>2</sup></td>
-                    <td>strych 15 m<sup>2</sup></td>
-                    <td>259 500 zł</td>
-                    <td><a class="container-table--link" href="">pobierz</a></td>
-                    <td>rezerwacja</td>
+                <tr class="container-table">
+                    <td class="container-table--col1">P11B</td>
+                    <td class="floor container-table--col1">piętro</td>
+                    <td class="container-table--col1">66,57m<sup>2</sup></td>
+                    <td class="roof container-table--col2">strych 15 m<sup>2</sup></td>
+                    <td class="more container-table--col2">259 500 zł</td>
+                    <td class="container-table--col2"><a class="container-table--link" href="">pobierz</a></td>
+                    <td class="reserved container-table--col2">rezerwacja</td>
                 </tr>
-                <tr class="container-table container-table1">
-                    <td>P12A</td>
-                    <td>parter</td>
-                    <td>64,32m<sup>2</sup></td>
-                    <td>ogródek 84 m<sup>2</sup></td>
-                    <td>289 500 zł</td>
-                    <td><a class="container-table--link" href="">pobierz</a></td>
-                    <td>wolny</td>
+                <tr class="container-table">
+                    <td class="container-table--col1">P12A</td>
+                    <td class="parter container-table--col1">parter</td>
+                    <td class="container-table--col1">64,32m<sup>2</sup></td>
+                    <td class="garden container-table--col2">ogródek 84 m<sup>2</sup></td>
+                    <td class="more container-table--col2">289 500 zł</td>
+                    <td class="container-table--col2"><a class="container-table--link " href="">pobierz</a></td>
+                    <td class="available container-table--col2">wolny</td>
                 </tr>
-                <tr class="container-table container-table1">
-                    <td>P12B</td>
-                    <td>piętro</td>
-                    <td>66,57m<sup>2</sup></td>
-                    <td>strych 15 m<sup>2</sup></td>
-                    <td>259 500 zł</td>
-                    <td><a class="container-table--link" href="">pobierz</a></td>
-                    <td>wolny</td>
+                <tr class="container-table">
+                    <td class="container-table--col1">P12B</td>
+                    <td class="floor container-table--col1">piętro</td>
+                    <td class="container-table--col1">66,57m<sup>2</sup></td>
+                    <td class="roof container-table--col2">strych 15 m<sup>2</sup></td>
+                    <td class="less container-table--col2">249 500 zł</td>
+                    <td class="container-table--col2"><a class="container-table--link" href="">pobierz</a></td>
+                    <td class="available container-table--col2">wolny</td>
                 </tr>
-                <tr class="container-table container-table1">
-                    <td>P13A</td>
-                    <td>parter</td>
-                    <td>64,32m<sup>2</sup></td>
-                    <td>ogródek 82 m<sup>2</sup></td>
-                    <td>289 500 zł</td>
-                    <td><a class="container-table--link" href="">pobierz</a></td>
-                    <td>wolny</td>
+                <tr class="container-table">
+                    <td class="container-table--col1">P13A</td>
+                    <td class="parter container-table--col1">parter</td>
+                    <td class="container-table--col1">64,32m<sup>2</sup></td>
+                    <td class="garden container-table--col2">ogródek 82 m<sup>2</sup></td>
+                    <td class="more container-table--col2">279 500 zł</td>
+                    <td class="container-table--col2"><a class="container-table--link" href="">pobierz</a></td>
+                    <td class="available container-table--col2">wolny</td>
                 </tr>
-                <tr class="container-table container-table1">
-                    <td>P13B</td>
-                    <td>piętro</td>
-                    <td>66,57m<sup>2</sup></td>
-                    <td>strych 15 m<sup>2</sup></td>
-                    <td>259 500 zł</td>
-                    <td><a class="container-table--link" href="">pobierz</a></td>
-                    <td>wolny</td>
+                <tr class="container-table">
+                    <td class="container-table--col1">P13B</td>
+                    <td class="floor container-table--col1">piętro</td>
+                    <td class="container-table--col1">66,57m<sup>2</sup></td>
+                    <td class="roof container-table--col2">strych 15 m<sup>2</sup></td>
+                    <td class="more container-table--col2">259 500 zł</td>
+                    <td class="container-table--col2"><a class="container-table--link" href="">pobierz</a></td>
+                    <td class="available container-table--col2">wolny</td>
                 </tr>
-                <tr class="container-table container-table1">
-                    <td>P14A</td>
-                    <td>parter</td>
-                    <td>64,32m<sup>2</sup></td>
-                    <td>ogródek 87 m<sup>2</sup></td>
-                    <td>289 500 zł</td>
-                    <td><a class="container-table--link" href="">pobierz</a></td>
-                    <td>wolny</td>
+                <tr class="container-table">
+                    <td class="container-table--col1">P14A</td>
+                    <td class="parter container-table--col1">parter</td>
+                    <td class="container-table--col1">64,32m<sup>2</sup></td>
+                    <td class="garden container-table--col2">ogródek 87 m<sup>2</sup></td>
+                    <td class="more container-table--col2">285 500 zł</td>
+                    <td class="container-table--col2"><a class="container-table--link" href="">pobierz</a></td>
+                    <td class="available container-table--col2">wolny</td>
                 </tr>
-                <tr class="container-table container-table1">
-                    <td>P14B</td>
-                    <td>piętro</td>
-                    <td>66,57m<sup>2</sup></td>
-                    <td>strych 15 m<sup>2</sup></td>
-                    <td>259 500 zł</td>
-                    <td><a class="container-table--link" href="">pobierz</a></td>
-                    <td>sprzedany</td>
-                </tr>
-
-                <tr class="container-table container-table1">
-                    <td>P15A</td>
-                    <td>parter</td>
-                    <td>64,32m<sup>2</sup></td>
-                    <td>ogródek 81 m<sup>2</sup></td>
-                    <td>289 500 zł</td>
-                    <td><a class="container-table--link" href="">pobierz</a></td>
-                    <td>wolny</td>
-                </tr>
-                <tr class="container-table container-table1">
-                    <td>P15B</td>
-                    <td>piętro</td>
-                    <td>66,57m<sup>2</sup></td>
-                    <td>strych 15 m<sup>2</sup></td>
-                    <td>259 500 zł</td>
-                    <td><a class="container-table--link" href="">pobierz</a></td>
-                    <td>rezerwacja</td>
-                </tr>
-                <tr class="container-table container-table2">
-                    <td>P16A</td>
-                    <td>parter</td>
-                    <td>64,32m<sup>2</sup></td>
-                    <td>ogródek 84 m<sup>2</sup></td>
-                    <td>289 500 zł</td>
-                    <td><a class="container-table--link" href="">pobierz</a></td>
-                    <td>wolny</td>
-                </tr>
-                <tr class="container-table container-table2">
-                    <td>P16B</td>
-                    <td>piętro</td>
-                    <td>66,57m<sup>2</sup></td>
-                    <td>strych 15 m<sup>2</sup></td>
-                    <td>259 500 zł</td>
-                    <td><a class="container-table--link" href="">pobierz</a></td>
-                    <td>wolny</td>
-                </tr>
-                <tr class="container-table container-table2">
-                    <td>P17A</td>
-                    <td>parter</td>
-                    <td>64,32m<sup>2</sup></td>
-                    <td>ogródek 82 m<sup>2</sup></td>
-                    <td>289 500 zł</td>
-                    <td><a class="container-table--link" href="">pobierz</a></td>
-                    <td>wolny</td>
-                </tr>
-                <tr class="container-table container-table2">
-                    <td>P17B</td>
-                    <td>piętro</td>
-                    <td>66,57m<sup>2</sup></td>
-                    <td>strych 15 m<sup>2</sup></td>
-                    <td>259 500 zł</td>
-                    <td><a class="container-table--link" href="">pobierz</a></td>
-                    <td>wolny</td>
-                </tr>
-                <tr class="container-table container-table2">
-                    <td>P18A</td>
-                    <td>parter</td>
-                    <td>64,32m<sup>2</sup></td>
-                    <td>ogródek 87 m<sup>2</sup></td>
-                    <td>289 500 zł</td>
-                    <td><a class="container-table--link" href="">pobierz</a></td>
-                    <td>wolny</td>
-                </tr>
-                <tr class="container-table container-table2">
-                    <td>P18B</td>
-                    <td>piętro</td>
-                    <td>66,57m<sup>2</sup></td>
-                    <td>strych 15 m<sup>2</sup></td>
-                    <td>259 500 zł</td>
-                    <td><a class="container-table--link" href="">pobierz</a></td>
-                    <td>sprzedany</td>
+                <tr class="container-table">
+                    <td class="container-table--col1">P14B</td>
+                    <td class="floor container-table--col1">piętro</td>
+                    <td class="container-table--col1">66,57m<sup>2</sup></td>
+                    <td class="roof container-table--col2">strych 15 m<sup>2</sup></td>
+                    <td class="less container-table--col2">239 500 zł</td>
+                    <td class="container-table--col2"><a class="container-table--link" href="">pobierz</a></td>
+                    <td class="sold container-table--col2">sprzedany</td>
                 </tr>
 
-                <tr class="container-table container-table2">
-                    <td>P19A</td>
-                    <td>parter</td>
-                    <td>64,32m<sup>2</sup></td>
-                    <td>ogródek 81 m<sup>2</sup></td>
-                    <td>289 500 zł</td>
-                    <td><a class="container-table--link" href="">pobierz</a></td>
-                    <td>wolny</td>
+                <tr class="container-table">
+                    <td class="container-table--col1">P15A</td>
+                    <td class="parter container-table--col1">parter</td>
+                    <td class="container-table--col1">64,32m<sup>2</sup></td>
+                    <td class="garden container-table--col2">ogródek 81 m<sup>2</sup></td>
+                    <td class="more container-table--col2">289 500 zł</td>
+                    <td class="container-table--col2"><a class="container-table--link" href="">pobierz</a></td>
+                    <td class="available container-table--col2">wolny</td>
                 </tr>
-                <tr class="container-table container-table2">
-                    <td>P19B</td>
-                    <td>piętro</td>
-                    <td>66,57m<sup>2</sup></td>
-                    <td>strych 15 m<sup>2</sup></td>
-                    <td>259 500 zł</td>
-                    <td><a class="container-table--link" href="">pobierz</a></td>
-                    <td>rezerwacja</td>
+                <tr class="container-table">
+                    <td class="container-table--col1">P15B</td>
+                    <td class="floor container-table--col1">piętro</td>
+                    <td class="container-table--col1">66,57m<sup>2</sup></td>
+                    <td class="roof container-table--col2">strych 15 m<sup>2</sup></td>
+                    <td class="more container-table--col2">259 500 zł</td>
+                    <td class="container-table--col2"><a class="container-table--link" href="">pobierz</a></td>
+                    <td class="reserved container-table--col2">rezerwacja</td>
                 </tr>
-                <tr class="container-table container-table2">
-                    <td>P20A</td>
-                    <td>parter</td>
-                    <td>64,32m<sup>2</sup></td>
-                    <td>ogródek 84 m<sup>2</sup></td>
-                    <td>289 500 zł</td>
-                    <td><a class="container-table--link" href="">pobierz</a></td>
-                    <td>wolny</td>
+                <tr class="container-table">
+                    <td class="container-table--col1">P16A</td>
+                    <td class="parter container-table--col1">parter</td>
+                    <td class="container-table--col1">64,32m<sup>2</sup></td>
+                    <td class="garden container-table--col2">ogródek 84 m<sup>2</sup></td>
+                    <td class="more container-table--col2">289 500 zł</td>
+                    <td class="container-table--col2"><a class="container-table--link" href="">pobierz</a></td>
+                    <td class="available container-table--col2">wolny</td>
                 </tr>
-                <tr class="container-table container-table2">
-                    <td>P20B</td>
-                    <td>piętro</td>
-                    <td>66,57m<sup>2</sup></td>
-                    <td>strych 15 m<sup>2</sup></td>
-                    <td>259 500 zł</td>
-                    <td><a class="container-table--link" href="">pobierz</a></td>
-                    <td>wolny</td>
+                <tr class="container-table">
+                    <td class="container-table--col1">P16B</td>
+                    <td class="floor container-table--col1">piętro</td>
+                    <td class="container-table--col1">66,57m<sup>2</sup></td>
+                    <td class="roof container-table--col2">strych 15 m<sup>2</sup></td>
+                    <td class="less container-table--col2">249 500 zł</td>
+                    <td class="container-table--col2"><a class="container-table--link" href="">pobierz</a></td>
+                    <td class="available container-table--col2">wolny</td>
                 </tr>
-                <tr class="container-table container-table3">
-                    <td>P21A</td>
-                    <td>parter</td>
-                    <td>64,32m<sup>2</sup></td>
-                    <td>ogródek 82 m<sup>2</sup></td>
-                    <td>289 500 zł</td>
-                    <td><a class="container-table--link" href="">pobierz</a></td>
-                    <td>wolny</td>
+                <tr class="container-table">
+                    <td class="container-table--col1">P17A</td>
+                    <td class="parter container-table--col1">parter</td>
+                    <td class="container-table--col1">64,32m<sup>2</sup></td>
+                    <td class="garden container-table--col2">ogródek 82 m<sup>2</sup></td>
+                    <td class="more container-table--col2">285 500 zł</td>
+                    <td class="container-table--col2"><a class="container-table--link" href="">pobierz</a></td>
+                    <td class="available container-table--col2">wolny</td>
                 </tr>
-                <tr class="container-table container-table3">
-                    <td>P21B</td>
-                    <td>piętro</td>
-                    <td>66,57m<sup>2</sup></td>
-                    <td>strych 15 m<sup>2</sup></td>
-                    <td>259 500 zł</td>
-                    <td><a class="container-table--link" href="">pobierz</a></td>
-                    <td>wolny</td>
+                <tr class="container-table">
+                    <td class="container-table--col1">P17B</td>
+                    <td class="floor container-table--col1">piętro</td>
+                    <td class="container-table--col1">66,57m<sup>2</sup></td>
+                    <td class="roof container-table--col2">strych 15 m<sup>2</sup></td>
+                    <td class="more container-table--col2">258 500 zł</td>
+                    <td class="container-table--col2"><a class="container-table--link" href="">pobierz</a></td>
+                    <td class="available container-table--col2">wolny</td>
                 </tr>
-                <tr class="container-table container-table3">
-                    <td>P22A</td>
-                    <td>parter</td>
-                    <td>64,32m<sup>2</sup></td>
-                    <td>ogródek 87 m<sup>2</sup></td>
-                    <td>289 500 zł</td>
-                    <td><a class="container-table--link" href="">pobierz</a></td>
-                    <td>wolny</td>
+                <tr class="container-table">
+                    <td class="container-table--col1">P18A</td>
+                    <td class="parter container-table--col1">parter</td>
+                    <td class="container-table--col1">64,32m<sup>2</sup></td>
+                    <td class="garden container-table--col2">ogródek 87 m<sup>2</sup></td>
+                    <td class="more container-table--col2">289 500 zł</td>
+                    <td class="container-table--col2"><a class="container-table--link" href="">pobierz</a></td>
+                    <td class="available container-table--col2">wolny</td>
                 </tr>
-                <tr class="container-table container-table3">
-                    <td>P22B</td>
-                    <td>piętro</td>
-                    <td>66,57m<sup>2</sup></td>
-                    <td>strych 15 m<sup>2</sup></td>
-                    <td>259 500 zł</td>
-                    <td><a class="container-table--link" href="">pobierz</a></td>
-                    <td>sprzedany</td>
+                <tr class="container-table">
+                    <td class="container-table--col1">P18B</td>
+                    <td class="floor container-table--col1">piętro</td>
+                    <td class="container-table--col1">66,57m<sup>2</sup></td>
+                    <td class="roof container-table--col2">strych 15 m<sup>2</sup></td>
+                    <td class="less container-table--col2">245 500 zł</td>
+                    <td class="container-table--col2"><a class="container-table--link" href="">pobierz</a></td>
+                    <td class="sold container-table--col2">sprzedany</td>
                 </tr>
 
-                <tr class="container-table container-table3">
-                    <td>P23A</td>
-                    <td>parter</td>
-                    <td>64,32m<sup>2</sup></td>
-                    <td>ogródek 81 m<sup>2</sup></td>
-                    <td>289 500 zł</td>
-                    <td><a class="container-table--link" href="">pobierz</a></td>
-                    <td>wolny</td>
+                <tr class="container-table">
+                    <td class="container-table--col1">P19A</td>
+                    <td class="parter container-table--col1">parter</td>
+                    <td class="container-table--col1">64,32m<sup>2</sup></td>
+                    <td class="garden container-table--col2">ogródek 81 m<sup>2</sup></td>
+                    <td class="more container-table--col2">289 500 zł</td>
+                    <td class="container-table--col2"><a class="container-table--link" href="">pobierz</a></td>
+                    <td class="available container-table--col2">wolny</td>
                 </tr>
-                <tr class="container-table container-table3">
-                    <td>P23B</td>
-                    <td>piętro</td>
-                    <td>66,57m<sup>2</sup></td>
-                    <td>strych 15 m<sup>2</sup></td>
-                    <td>259 500 zł</td>
-                    <td><a class="container-table--link" href="">pobierz</a></td>
-                    <td>rezerwacja</td>
+                <tr class="container-table">
+                    <td class="container-table--col1">P19B</td>
+                    <td class="floor container-table--col1">piętro</td>
+                    <td class="container-table--col1">66,57m<sup>2</sup></td>
+                    <td class="roof container-table--col2">strych 15 m<sup>2</sup></td>
+                    <td class="more container-table--col2">259 500 zł</td>
+                    <td class="container-table--col2"><a class="container-table--link" href="">pobierz</a></td>
+                    <td class="reserved container-table--col2">rezerwacja</td>
                 </tr>
-                <tr class="container-table container-table3">
-                    <td>P24A</td>
-                    <td>parter</td>
-                    <td>64,32m<sup>2</sup></td>
-                    <td>ogródek 84 m<sup>2</sup></td>
-                    <td>289 500 zł</td>
-                    <td><a class="container-table--link" href="">pobierz</a></td>
-                    <td>wolny</td>
+                <tr class="container-table">
+                    <td class="container-table--col1">P20A</td>
+                    <td class="parter container-table--col1">parter</td>
+                    <td class="container-table--col1">64,32m<sup>2</sup></td>
+                    <td class="garden container-table--col2">ogródek 84 m<sup>2</sup></td>
+                    <td class="more container-table--col2">289 500 zł</td>
+                    <td class="container-table--col2"><a class="container-table--link" href="">pobierz</a></td>
+                    <td class="available container-table--col2">wolny</td>
                 </tr>
-                <tr class="container-table container-table3">
-                    <td>P24B</td>
-                    <td>piętro</td>
-                    <td>66,57m<sup>2</sup></td>
-                    <td>strych 15 m<sup>2</sup></td>
-                    <td>259 500 zł</td>
-                    <td><a class="container-table--link" href="">pobierz</a></td>
-                    <td>wolny</td>
+                <tr class="container-table">
+                    <td class="container-table--col1">P20B</td>
+                    <td class="floor container-table--col1">piętro</td>
+                    <td class="container-table--col1">66,57m<sup>2</sup></td>
+                    <td class="roof container-table--col2">strych 15 m<sup>2</sup></td>
+                    <td class="container-table--col2">259 500 zł</td>
+                    <td class="container-table--col2"><a class="container-table--link" href="">pobierz</a></td>
+                    <td class="available container-table--col2">wolny</td>
                 </tr>
-                <tr class="container-table container-table3">
-                    <td>P25A</td>
-                    <td>parter</td>
-                    <td>64,32m<sup>2</sup></td>
-                    <td>ogródek 82 m<sup>2</sup></td>
-                    <td>289 500 zł</td>
-                    <td><a class="container-table--link" href="">pobierz</a></td>
-                    <td>wolny</td>
+                <tr class="container-table">
+                    <td class="container-table--col1">P21A</td>
+                    <td class="parter container-table--col1">parter</td>
+                    <td class="container-table--col1">64,32m<sup>2</sup></td>
+                    <td class="garden container-table--col2">ogródek 82 m<sup>2</sup></td>
+                    <td class="more container-table--col2">289 500 zł</td>
+                    <td class="container-table--col2"><a class="container-table--link" href="">pobierz</a></td>
+                    <td class="available container-table--col2">wolny</td>
                 </tr>
-                <tr class="container-table container-table3">
-                    <td>P25B</td>
-                    <td>piętro</td>
-                    <td>66,57m<sup>2</sup></td>
-                    <td>strych 15 m<sup>2</sup></td>
-                    <td>259 500 zł</td>
-                    <td><a class="container-table--link" href="">pobierz</a></td>
-                    <td>wolny</td>
+                <tr class="container-table">
+                    <td class="container-table--col1">P21B</td>
+                    <td class="floor container-table--col1">piętro</td>
+                    <td class="container-table--col1">66,57m<sup>2</sup></td>
+                    <td class="roof container-table--col2">strych 15 m<sup>2</sup></td>
+                    <td class="less container-table--col2">249 500 zł</td>
+                    <td class="container-table--col2"><a class="container-table--link" href="">pobierz</a></td>
+                    <td class="available container-table--col2">wolny</td>
                 </tr>
-                <tr class="container-table container-table4">
-                    <td>P26A</td>
-                    <td>parter</td>
-                    <td>64,32m<sup>2</sup></td>
-                    <td>ogródek 87 m<sup>2</sup></td>
-                    <td>289 500 zł</td>
-                    <td><a class="container-table--link" href="">pobierz</a></td>
-                    <td>wolny</td>
+                <tr class="container-table">
+                    <td class="container-table--col1">P22A</td>
+                    <td class="parter container-table--col1">parter</td>
+                    <td class="container-table--col1">64,32m<sup>2</sup></td>
+                    <td class="garden container-table--col2">ogródek 87 m<sup>2</sup></td>
+                    <td class="more container-table--col2">279 500 zł</td>
+                    <td class="container-table--col2"><a class="container-table--link" href="">pobierz</a></td>
+                    <td class="available container-table--col2">wolny</td>
                 </tr>
-                <tr class="container-table container-table4">
-                    <td>P26B</td>
-                    <td>piętro</td>
-                    <td>66,57m<sup>2</sup></td>
-                    <td>strych 15 m<sup>2</sup></td>
-                    <td>259 500 zł</td>
-                    <td><a class="container-table--link" href="">pobierz</a></td>
-                    <td>sprzedany</td>
+                <tr class="container-table">
+                    <td class="container-table--col1">P22B</td>
+                    <td class="floor container-table--col1">piętro</td>
+                    <td class="container-table--col1">66,57m<sup>2</sup></td>
+                    <td class="roof container-table--col2">strych 15 m<sup>2</sup></td>
+                    <td class="more container-table--col2">259 500 zł</td>
+                    <td class="container-table--col2"><a class="container-table--link" href="">pobierz</a></td>
+                    <td class="sold container-table--col2">sprzedany</td>
                 </tr>
-                <tr class="container-table container-table4">
-                    <td>P27A</td>
-                    <td>parter</td>
-                    <td>64,32m<sup>2</sup></td>
-                    <td>ogródek 82 m<sup>2</sup></td>
-                    <td>289 500 zł</td>
-                    <td><a class="container-table--link" href="">pobierz</a></td>
-                    <td>wolny</td>
+
+                <tr class="container-table">
+                    <td class="container-table--col1">P23A</td>
+                    <td class="parter container-table--col1">parter</td>
+                    <td class="container-table--col1">64,32m<sup>2</sup></td>
+                    <td class="garden container-table--col2">ogródek 81 m<sup>2</sup></td>
+                    <td class="more container-table--col2">269 500 zł</td>
+                    <td class="container-table--col2"><a class="container-table--link" href="">pobierz</a></td>
+                    <td class="available container-table--col2">wolny</td>
                 </tr>
-                <tr class="container-table container-table4">
-                    <td>P27B</td>
-                    <td>piętro</td>
-                    <td>66,57m<sup>2</sup></td>
-                    <td>strych 15 m<sup>2</sup></td>
-                    <td>259 500 zł</td>
-                    <td><a class="container-table--link" href="">pobierz</a></td>
-                    <td>wolny</td>
+                <tr class="container-table">
+                    <td class="container-table--col1">P23B</td>
+                    <td class="floor container-table--col1">piętro</td>
+                    <td class="container-table--col1">66,57m<sup>2</sup></td>
+                    <td class="roof container-table--col2">strych 15 m<sup>2</sup></td>
+                    <td class="more container-table--col2">259 500 zł</td>
+                    <td class="container-table--col2"><a class="container-table--link" href="">pobierz</a></td>
+                    <td class="reserved container-table--col2">rezerwacja</td>
                 </tr>
-                <tr class="container-table container-table4">
-                    <td>P28A</td>
-                    <td>parter</td>
-                    <td>64,32m<sup>2</sup></td>
-                    <td>ogródek 87 m<sup>2</sup></td>
-                    <td>289 500 zł</td>
-                    <td><a class="container-table--link" href="">pobierz</a></td>
-                    <td>wolny</td>
+                <tr class="container-table">
+                    <td class="container-table--col1">P24A</td>
+                    <td class="parter container-table--col1">parter</td>
+                    <td class="container-table--col1">64,32m<sup>2</sup></td>
+                    <td class="garden container-table--col2">ogródek 84 m<sup>2</sup></td>
+                    <td class="more container-table--col2">289 500 zł</td>
+                    <td class="container-table--col2"><a class="container-table--link" href="">pobierz</a></td>
+                    <td class="available container-table--col2">wolny</td>
                 </tr>
-                <tr class="container-table container-table4">
-                    <td>P28B</td>
-                    <td>piętro</td>
-                    <td>66,57m<sup>2</sup></td>
-                    <td>strych 15 m<sup>2</sup></td>
-                    <td>259 500 zł</td>
-                    <td><a class="container-table--link" href="">pobierz</a></td>
-                    <td>sprzedany</td>
+                <tr class="container-table">
+                    <td class="container-table--col1">P24B</td>
+                    <td class="floor container-table--col1">piętro</td>
+                    <td class="container-table--col1">66,57m<sup>2</sup></td>
+                    <td class="roof container-table--col2">strych 15 m<sup>2</sup></td>
+                    <td class="more container-table--col2">259 500 zł</td>
+                    <td class="container-table--col2"><a class="container-table--link" href="">pobierz</a></td>
+                    <td class="available container-table--col2">wolny</td>
+                </tr>
+                <tr class="container-table">
+                    <td class="container-table--col1">P25A</td>
+                    <td class="parter container-table--col1">parter</td>
+                    <td class="container-table--col1">64,32m<sup>2</sup></td>
+                    <td class="garden container-table--col2">ogródek 82 m<sup>2</sup></td>
+                    <td class="more container-table--col2">289 500 zł</td>
+                    <td class="container-table--col2"><a class="container-table--link" href="">pobierz</a></td>
+                    <td class="available container-table--col2">wolny</td>
+                </tr>
+                <tr class="container-table">
+                    <td class="container-table--col1">P25B</td>
+                    <td class="floor container-table--col1">piętro</td>
+                    <td class="container-table--col1">66,57m<sup>2</sup></td>
+                    <td class="roof container-table--col2">strych 15 m<sup>2</sup></td>
+                    <td class="more container-table--col2">259 500 zł</td>
+                    <td class="container-table--col2"><a class="container-table--link" href="">pobierz</a></td>
+                    <td class="available container-table--col2">wolny</td>
+                </tr>
+                <tr class="container-table">
+                    <td class="container-table--col1">P26A</td>
+                    <td class="parter container-table--col1">parter</td>
+                    <td class="container-table--col1">64,32m<sup>2</sup></td>
+                    <td class="garden container-table--col2">ogródek 87 m<sup>2</sup></td>
+                    <td class="more container-table--col2">289 500 zł</td>
+                    <td class="container-table--col2"><a class="container-table--link" href="">pobierz</a></td>
+                    <td class="available container-table--col2">wolny</td>
+                </tr>
+                <tr class="container-table">
+                    <td class="container-table--col1">P26B</td>
+                    <td class="floor container-table--col1">piętro</td>
+                    <td class="container-table--col1">66,57m<sup>2</sup></td>
+                    <td class="roof container-table--col2">strych 15 m<sup>2</sup></td>
+                    <td class="less container-table--col2">239 500 zł</td>
+                    <td class="container-table--col2"><a class="container-table--link" href="">pobierz</a></td>
+                    <td class="sold container-table--col2">sprzedany</td>
+                </tr>
+                <tr class="container-table">
+                    <td class="container-table--col1">P27A</td>
+                    <td class="parter container-table--col1">parter</td>
+                    <td class="container-table--col1">64,32m<sup>2</sup></td>
+                    <td class="garden container-table--col2">ogródek 82 m<sup>2</sup></td>
+                    <td class="more container-table--col2">289 500 zł</td>
+                    <td class="container-table--col2"><a class="container-table--link" href="">pobierz</a></td>
+                    <td class="available container-table--col2">wolny</td>
+                </tr>
+                <tr class="container-table">
+                    <td class="container-table--col1">P27B</td>
+                    <td class="floor container-table--col1">piętro</td>
+                    <td class="container-table--col1">66,57m<sup>2</sup></td>
+                    <td class="roof container-table--col2">strych 15 m<sup>2</sup></td>
+                    <td class="more container-table--col2">259 500 zł</td>
+                    <td class="container-table--col2"><a class="container-table--link" href="">pobierz</a></td>
+                    <td class="available container-table--col2">wolny</td>
+                </tr>
+                <tr class="container-table">
+                    <td class="container-table--col1">P28A</td>
+                    <td class="parter container-table--col1">parter</td>
+                    <td class="container-table--col1">64,32m<sup>2</sup></td>
+                    <td class="garden container-table--col2">ogródek 87 m<sup>2</sup></td>
+                    <td class="more container-table--col2">289 500 zł</td>
+                    <td class="container-table--col2"><a class="container-table--link" href="">pobierz</a></td>
+                    <td class="available container-table--col2">wolny</td>
+                </tr>
+                <tr class="container-table">
+                    <td class="container-table--col1">P28B</td>
+                    <td class="floor container-table--col1">piętro</td>
+                    <td class="container-table--col1">66,57m<sup>2</sup></td>
+                    <td class="roof container-table--col2">strych 15 m<sup>2</sup></td>
+                    <td class="more container-table--col2">259 500 zł</td>
+                    <td class="container-table--col2"><a class="container-table--link" href="">pobierz</a></td>
+                    <td class="sold container-table--col2">sprzedany</td>
                 </tr>
             </table>
-
-            <!-- Pagination -->
-
-            <div class="pagination">
-                <a onclick="openPage(tableOne)" class="pagination--a pagination--a--active">1</a>
-                <a onclick="openPage(tableTwo)" class="pagination--a">2</a>
-                <a onclick="openPage(tableTree)" class="pagination--a">3</a>
-                <a onclick="openPage(tableFour)" class="pagination--a">4</a>
-            </div>
-
         </div>
     </section>
 
