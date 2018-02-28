@@ -1,7 +1,7 @@
 /* Slider */
 
-var slideIndex = 1;
-var timer = null;
+let slideIndex = 1;
+let timer = null;
 showSlides(slideIndex);
 
 function plusSlides(n) {
@@ -15,8 +15,8 @@ function currentSlide(n) {
 }
 
 function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("container-slider__slides");
+    let i;
+    let slides = document.getElementsByClassName("container-slider__slides");
 
     if (n == undefined) {
         n = ++slideIndex
@@ -36,40 +36,41 @@ function showSlides(n) {
 
 /* Pagination */
 
-var $table = document.querySelector('.container-table-main'),
-$n = 10,
-$rowCount = $table.rows.length,
-$firstRow = $table.rows[0].firstElementChild.tagName,
-$hasHead = ($firstRow === "TH"),
-$tr = [],
-$i,$ii,$j = ($hasHead)?1:0,
-$th = ($hasHead?$table.rows[(0)].outerHTML:"");
+let $table = document.querySelector('.container-table-main'),
+    $n = 10,
+    $rowCount = $table.rows.length,
+    $firstRow = $table.rows[0].firstElementChild.tagName,
+    $hasHead = ($firstRow === "TH"),
+    $tr = [],
+    $i, $ii, $j = ($hasHead) ? 1 : 0,
+    $th = ($hasHead ? $table.rows[(0)].outerHTML : "");
 
 var $pageCount = Math.ceil($rowCount / $n);
 
 if ($pageCount > 1) {
-    for ($i = $j,$ii = 0; $i < $rowCount; $i++, $ii++)
+    for ($i = $j, $ii = 0; $i < $rowCount; $i++, $ii++)
         $tr[$ii] = $table.rows[$i].outerHTML;
-      $table.insertAdjacentHTML("afterend","<div id='pagination'></div");
-      sort(1);
+    $table.insertAdjacentHTML("afterend", "<div id='pagination'></div");
+    sort(1);
 }
 
 function sort($p) {
-  
-    var $rows = $th,$s = (($n * $p)-$n);
-    for ($i = $s; $i < ($s+$n) && $i < $tr.length; $i++)
+
+    var $rows = $th,
+        $s = (($n * $p) - $n);
+    for ($i = $s; $i < ($s + $n) && $i < $tr.length; $i++)
         $rows += $tr[$i];
-    
+
     $table.innerHTML = $rows;
-    
+
     document.getElementById("pagination").innerHTML = pageButtons($pageCount);
-   document.querySelector(".pagination"+$p).classList.add("pagination-active");
+    document.querySelector(".pagination" + $p).classList.add("pagination-active");
 }
 
 function pageButtons($pCount) {
-   let $buttons = [];
-    for ($i=1; $i<=$pCount;$i++)
-        $buttons += "<input type='button' class='pagination"+$i+"'value='"+$i+"' onclick='sort("+$i+")'>";
+    let $buttons = [];
+    for ($i = 1; $i <= $pCount; $i++)
+        $buttons += "<input type='button' class='pagination" + $i + "'value='" + $i + "' onclick='sort(" + $i + ")'>";
     return $buttons;
 }
 
@@ -207,8 +208,8 @@ function sortTableDown(n) {
 const allFlats = document.querySelectorAll('.container-house-table--td')
 const leftParter = document.querySelectorAll('.container-house-table--td--left-parter');
 const rightParter = document.querySelectorAll('.container-house-table--td--right-parter');
-const leftFlour = document.querySelectorAll('.container-house-table--td--left-flour');
-const rightFlour = document.querySelectorAll('.container-house-table--td--right-flour');
+const leftFloor = document.querySelectorAll('.container-house-table--td--left-flour');
+const rightFloor = document.querySelectorAll('.container-house-table--td--right-flour');
 const btn = document.querySelectorAll('.container-house-button');
 const allImg = document.querySelectorAll('.container-house--img');
 const leftParterImg = document.querySelector('.container-house--img--left-parter');
@@ -310,19 +311,20 @@ myImg.addEventListener("touchmove", zoomPan);
 const tableCol1 = document.querySelectorAll('.container-table--col1');
 const tableCol2 = document.querySelectorAll('.container-table--col2');
 
-function openTable1(){
-    for (var i=0; i<tableCol1.length; i++){
+function openTable1() {
+    for (var i = 0; i < tableCol1.length; i++) {
         tableCol1[i].style.display = 'table-cell';
     }
-    for (var j=0; j<tableCol1.length; j++){
+    for (var j = 0; j < tableCol1.length; j++) {
         tableCol2[j].style.display = 'none';
     }
 }
-function openTable2(){
-     for (var i=0; i<tableCol1.length; i++){
+
+function openTable2() {
+    for (var i = 0; i < tableCol1.length; i++) {
         tableCol1[i].style.display = 'none';
     }
-    for (var j=0; j<tableCol1.length; j++){
+    for (var j = 0; j < tableCol1.length; j++) {
         tableCol2[j].style.display = 'table-cell';
-    } 
+    }
 }

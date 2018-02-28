@@ -23,14 +23,11 @@
         height: 400px;
     }
     .container-outer {
-       width: 96%; 
+        width: 96%;
     }
     .container-filter__div--filter {
         width: 100%;
         margin: auto;
-    }
-    .container-filter--col {
-        padding: 7px 0;
     }
     .container-house {
         max-height: none;
@@ -57,7 +54,7 @@
         width: 100%;
     }
     .container-contact--col--info {
-        margin-top: 0;
+        padding: 0;
     }
     .container-contact {
         max-height: none;
